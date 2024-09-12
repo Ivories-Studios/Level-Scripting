@@ -1,0 +1,10 @@
+{
+    "name": "com.ivories-studios.level-scripting",
+    "version": "0.9.0",
+    "displayName": "Level Scripting",
+    "description": "Level Scripting Framework",
+    "author": {
+      "name": "Ivories Studios",
+      "email": "ivories.studios@gmail.com"
+    }
+  }

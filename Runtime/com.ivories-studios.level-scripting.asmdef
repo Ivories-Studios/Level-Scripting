@@ -1,0 +1,17 @@
+{
+    "name": "com.ivories-studios.level-scripting",
+    "rootNamespace": "",
+    "references": [
+        "GUID:49818357e697641afb75d2f8acaf1861",
+        "GUID:6e6545b65b206df459f7a47f0e90eec1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
