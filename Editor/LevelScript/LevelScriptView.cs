@@ -39,7 +39,7 @@ namespace IvoriesStudios.LevelScripting.Editor
             _searchProvider.Sequence = this;
             nodeCreationRequest += ShowSearchWindow;
 
-            StyleSheet style = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/LevelScripting/Editor/USS/LevelScriptEditor.uss");
+            StyleSheet style = AssetDatabase.LoadAssetAtPath<StyleSheet>("Packages/com.ivories-studios.level-scripting/Editor/USS/LevelScriptEditor.uss");
             styleSheets.Add(style);
 
             GridBackground gridBackground = new GridBackground();
