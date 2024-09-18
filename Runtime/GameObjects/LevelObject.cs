@@ -65,17 +65,17 @@ namespace IvoriesStudios.LevelScripting
                 _currentNode = null;
                 return;
             }
-            ScriptingNode nextNode = _levelScriptInstance.GetNode(nextNodesId[0]);
-            while (!nextNode.IsStopping)
+            ScriptingNode nextNode = null;
+            do
             {
+                nextNode = _levelScriptInstance.GetNode(nextNodesId[0]);
                 nextNodesId = nextNode.OnProcess(_levelScriptInstance);
                 if (nextNodesId.Length == 0)
                 {
                     _currentNode = null;
                     return;
                 }
-                nextNode = _levelScriptInstance.GetNode(nextNodesId[0]);
-            }
+            } while (!nextNode.IsStopping);
             _currentNode = nextNode;
         }
 
