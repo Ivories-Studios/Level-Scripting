@@ -11,7 +11,7 @@ namespace IvoriesStudios.LevelScripting.Dialogue
 
         public override string[] OnProcess(LevelScript currentSequence)
         {
-            IDialoguePanel.Instance.SetDialogueLine(DialogueSettings.GetCharacter(Speaker), Text);
+            IDialoguePanel.Instance.SetDialogueLine(CharacterList.GetCharacter(Speaker), Text);
             return base.OnProcess(currentSequence);
         }
     }

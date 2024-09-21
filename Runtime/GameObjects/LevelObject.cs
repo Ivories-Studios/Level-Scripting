@@ -1,6 +1,6 @@
 using UnityEngine;
 using IvoriesStudios.LevelScripting.Process;
-using IvoriesStudios.Patterns;
+using IvoriesStudios.Utils.Patterns;
 using System.Collections.Generic;
 using IvoriesStudios.LevelScripting.Level;
 using System;

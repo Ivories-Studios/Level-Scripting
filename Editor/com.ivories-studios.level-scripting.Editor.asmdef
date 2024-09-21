@@ -2,6 +2,7 @@
     "name": "com.ivories-studios.level-scripting.Editor",
     "rootNamespace": "",
     "references": [
+        "GUID:49818357e697641afb75d2f8acaf1861",
         "GUID:7d6f6d7d7a8dc4f45b0694d698cf420c"
     ],
     "includePlatforms": [

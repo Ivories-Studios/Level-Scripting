@@ -18,7 +18,7 @@ namespace IvoriesStudios.LevelScripting
             _path.SetValue(path, true);
 
             EditorGUILayout.Space();
-            if (GUILayout.Button("Generate Enums"))
+            if (GUILayout.Button("Generate"))
             {
                 LevelScriptingSettingsManager.Save();
                 GenerateEnums();
@@ -47,6 +47,10 @@ namespace IvoriesStudios.LevelScripting
 
             File.WriteAllText(enumFilePath, enumContent);
 
+            CharacterList characterList = ScriptableObject.CreateInstance<CharacterList>();
+            characterList.Initialize(characters);
+            AssetDatabase.CreateAsset(characterList, Path.Combine(directory, "CharacterList.asset"));
+
             List<string> triggers = LevelScriptingSettingsManager.Get<List<string>>("level.triggers");
             enumName = "Triggers";
             enumContent = "namespace IvoriesStudios.LevelScripting.Process\n{\n    public enum " + enumName + "\n    {\n";
@@ -56,7 +60,6 @@ namespace IvoriesStudios.LevelScripting
             }
             enumContent += "    }\n}";
 
-            directory = Path.Combine(_path.value, "Generated");
             enumFilePath = Path.Combine(directory, enumName + ".cs");
 
             File.WriteAllText(enumFilePath, enumContent);

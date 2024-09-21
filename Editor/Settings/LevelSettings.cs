@@ -10,8 +10,6 @@ namespace IvoriesStudios.LevelScripting
         private static UserSetting<bool> _showObjectives = new(LevelScriptingSettingsManager.Instance, "level.showObjectives", false, SettingsScope.Project);
         private static UserSetting<List<string>> _triggers = new(LevelScriptingSettingsManager.Instance, "level.triggers", new List<string>(), SettingsScope.Project);
 
-        public bool ShowObjectives => LevelScriptingSettingsManager.Get<bool>("level.showObjectives");
-
         private static bool _showTriggers = true;
         private static Vector2 _scrollPos;
 

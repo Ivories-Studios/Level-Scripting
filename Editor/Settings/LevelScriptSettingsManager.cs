@@ -1,5 +1,4 @@
 using UnityEditor;
-using UnityEditor.SettingsManagement;
 
 namespace IvoriesStudios.LevelScripting
 {
@@ -7,14 +6,14 @@ namespace IvoriesStudios.LevelScripting
     {
         internal const string PackageName = "com.ivories-studios.level-scripting";
 
-        private static Settings _instance;
+        private static UnityEditor.SettingsManagement.Settings _instance;
 
-        internal static Settings Instance
+        public static UnityEditor.SettingsManagement.Settings Instance
         {
             get
             {
                 if (_instance == null)
-                    _instance = new Settings(PackageName);
+                    _instance = new UnityEditor.SettingsManagement.Settings(PackageName);
 
                 return _instance;
             }

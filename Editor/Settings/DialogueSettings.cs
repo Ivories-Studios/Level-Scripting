@@ -12,11 +12,6 @@ namespace IvoriesStudios.LevelScripting.Dialogue
         private static bool _showCharacters = true;
         private static Vector2 _scrollPos;
 
-        public static Character GetCharacter(Characters character)
-        {
-            return LevelScriptingSettingsManager.Get<List<Character>>("dialogue.characterList")[(int)character];
-        }
-
         private void OnEnable()
         {
             _characterList.value = LevelScriptingSettingsManager.Get<List<Character>>("dialogue.characterList") ?? new List<Character>();
