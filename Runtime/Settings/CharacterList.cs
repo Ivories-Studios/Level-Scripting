@@ -25,7 +25,6 @@ public class CharacterList : ScriptableObject
         {
             _list.Add(new Character(character.Name, character.Portrait));
         }
-        Instance = this;
     }
 
     public static Character GetCharacter(Characters character)
