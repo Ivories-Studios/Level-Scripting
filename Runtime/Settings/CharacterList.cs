@@ -1,10 +1,11 @@
 using IvoriesStudios.LevelScripting.Dialogue;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterList : ScriptableObject
 {
-    private List<Character> _list = new List<Character>();
+    [SerializeField] private List<Character> _list = new List<Character>();
     public static CharacterList Instance { get; private set; }
 
     public void Initialize(List<Character> list)

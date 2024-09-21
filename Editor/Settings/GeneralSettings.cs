@@ -48,8 +48,11 @@ namespace IvoriesStudios.LevelScripting
             File.WriteAllText(enumFilePath, enumContent);
 
             CharacterList characterList = ScriptableObject.CreateInstance<CharacterList>();
-            characterList.Initialize(characters);
             AssetDatabase.CreateAsset(characterList, Path.Combine(directory, "CharacterList.asset"));
+            characterList = AssetDatabase.LoadAssetAtPath<CharacterList>(Path.Combine(directory, "CharacterList.asset"));
+            characterList.Initialize(characters);
+            EditorUtility.SetDirty(characterList);
+            AssetDatabase.SaveAssetIfDirty(characterList);
 
             List<string> triggers = LevelScriptingSettingsManager.Get<List<string>>("level.triggers");
             enumName = "Triggers";
