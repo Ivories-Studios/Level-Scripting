@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEditor;
+using UnityEngine;
 
 namespace IvoriesStudios.LevelScripting
 {
@@ -9,10 +11,17 @@ namespace IvoriesStudios.LevelScripting
         [SettingsProvider]
         private static SettingsProvider CreateSettingsProvider()
         {
-            return new SettingsProvider(_preferencesPath,
-                SettingsScope.Project)
-            { 
-                guiHandler = (searchContext) => GeneralSettings.GUI(searchContext)
+            return new SettingsProvider(_preferencesPath, SettingsScope.Project)
+            {
+                label = "General Settings",
+                guiHandler = (searchContext) =>
+                {
+                    if (GUILayout.Button("Generate Enums"))
+                    {
+                        GeneralSettings.GenerateEnums();
+                    }
+                },
+                keywords = new HashSet<string>(new[] { "Enums", "Generate" })
             };
         }
     }
