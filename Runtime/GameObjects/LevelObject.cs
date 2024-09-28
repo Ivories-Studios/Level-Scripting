@@ -53,7 +53,7 @@ namespace IvoriesStudios.LevelScripting
 
         public static void Trigger(Triggers tag)
         {
-            ScriptingNode _currentNode = _levelScriptInstance.Trigger(tag);
+            _currentNode = _levelScriptInstance.Trigger(tag);
             ProcessNodes();
         }
 
