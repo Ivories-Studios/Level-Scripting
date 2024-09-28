@@ -35,9 +35,11 @@ namespace IvoriesStudios.LevelScripting
             }
         }
 
+#if UNITY_EDITOR
         public static SerializedObject GetSerializedSettings()
         {
             return new SerializedObject(Instance);
         }
+#endif
     }
 }
