@@ -37,7 +37,6 @@ namespace IvoriesStudios.LevelScripting
         {
             return new SerializedObject(Instance);
         }
-#endif
 
         public static void GenerateEnums()
         {
@@ -68,5 +67,6 @@ namespace IvoriesStudios.LevelScripting
 
             AssetDatabase.Refresh();
         }
+#endif
     }
 }
