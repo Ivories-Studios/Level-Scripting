@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using IvoriesStudios.LevelScripting.Process;
 
 namespace IvoriesStudios.LevelScripting
