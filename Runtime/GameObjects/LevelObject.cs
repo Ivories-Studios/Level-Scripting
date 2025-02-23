@@ -17,8 +17,8 @@ namespace IvoriesStudios.LevelScripting
         #region Variables
         private static LevelScript _levelScriptInstance;
         private static ScriptingNode _currentNode;
-        private static Dictionary<string, GameObject> _sceneReferencesDict = new Dictionary<string, GameObject>();
-        private static List<LevelObjective> _levelObjectives = new List<LevelObjective>();
+        private Dictionary<string, GameObject> _sceneReferencesDict = new Dictionary<string, GameObject>();
+        private List<LevelObjective> _levelObjectives = new List<LevelObjective>();
         #endregion
 
         #region Properties
@@ -48,7 +48,7 @@ namespace IvoriesStudios.LevelScripting
         #region Public Methods
         public static T GetSceneReference<T>(string tag) where T : Component
         {
-            return _sceneReferencesDict[tag].GetComponent<T>();
+            return Instance._sceneReferencesDict[tag].GetComponent<T>();
         }
 
         public static void Trigger(Triggers tag)
@@ -85,14 +85,14 @@ namespace IvoriesStudios.LevelScripting
 
         public static void AddObjective(LevelObjective objective)
         {
-            _levelObjectives.Add(objective);
-            ObjectivesChanged.Invoke(_levelObjectives.ToArray());
+            Instance._levelObjectives.Add(objective);
+            ObjectivesChanged.Invoke(Instance._levelObjectives.ToArray());
         }
 
         public static void CompleteObjective(int objectiveId)
         {
-            _levelObjectives.RemoveAll((obj) => obj.Id == objectiveId);
-            ObjectivesChanged.Invoke(_levelObjectives.ToArray());
+            Instance._levelObjectives.RemoveAll((obj) => obj.Id == objectiveId);
+            ObjectivesChanged.Invoke(Instance._levelObjectives.ToArray());
         }
         #endregion
     }
